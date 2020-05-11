@@ -1,12 +1,11 @@
 <template>
     <div>
-
         <v-card>
             <v-card-title>
                 {{ connection.name }} - {{ gameProp.currentQuestion }} - {{ stateName }}
             </v-card-title>
             <v-card-text>
-                Players
+                {{ gameProp.players.length }} Players
                 <v-list>
                     <v-list-item
                             v-for="player in gameProp.players"
