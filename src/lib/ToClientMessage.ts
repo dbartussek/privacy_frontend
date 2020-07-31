@@ -2,6 +2,7 @@ import {RoundData} from "@/lib/RoundData";
 
 export interface PlayerList {
     players: Array<string>;
+    has_answered: Array<string>,
 }
 
 export interface RoundDataMessage {

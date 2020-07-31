@@ -12,6 +12,8 @@
                             :key="player"
                     >
                         {{ player }}
+
+                        <v-icon v-if="gameProp.has_answered.includes(player)">done</v-icon>
                     </v-list-item>
                 </v-list>
 

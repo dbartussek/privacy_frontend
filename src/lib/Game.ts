@@ -9,6 +9,8 @@ export enum PlayerState {
 
 export default class Game {
     players: Array<string> = [];
+    has_answered: Array<string> = [];
+
     rounds: Array<RoundData> = [];
 
     connection: Connection;
@@ -29,6 +31,7 @@ export default class Game {
         };
         connection.handlePlayerList = (message) => {
             this.players = message.players;
+            this.has_answered = message.has_answered;
             this.refresh();
         };
         connection.handleRoundData = (message) => {
