@@ -10,10 +10,10 @@
                     <v-list-item
                             v-for="player in gameProp.players"
                             :key="player"
+
+                            :class="playerClass(player)"
                     >
                         {{ player }}
-
-                        <v-icon v-if="gameProp.has_answered.includes(player)">done</v-icon>
                     </v-list-item>
                 </v-list>
 
@@ -116,6 +116,14 @@
                     return 'Guess'
                 case PlayerState.Waiting:
                     return 'Waiting'
+            }
+        }
+
+        playerClass(player: string) {
+            if (this.gameProp.has_answered.includes(player)) {
+                return 'green';
+            } else {
+                return '';
             }
         }
     }
