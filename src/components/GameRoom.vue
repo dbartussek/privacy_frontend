@@ -120,7 +120,7 @@
         }
 
         playerClass(player: string) {
-            if (this.gameProp.has_answered.includes(player)) {
+            if (this.gameProp.hasAnswered.includes(player)) {
                 return 'green';
             } else {
                 return '';

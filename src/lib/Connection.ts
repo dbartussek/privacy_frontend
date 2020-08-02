@@ -22,12 +22,12 @@ export default class Connection {
         const socket = new WebSocket(address);
 
         // Once the socket has been opened, resolve this promise
-        let resolve_socket_open_promise!: (value: WebSocket) => void;
-        const socket_open_promise: Promise<WebSocket> = new Promise(r => {
-            resolve_socket_open_promise = r;
+        let resolveSocketOpenPromise!: (value: WebSocket) => void;
+        const socketOpenPromise: Promise<WebSocket> = new Promise(r => {
+            resolveSocketOpenPromise = r;
         });
         socket.onopen = () => {
-            resolve_socket_open_promise(socket);
+            resolveSocketOpenPromise(socket);
         };
 
         const connection = new Connection(socket, name);
@@ -47,7 +47,7 @@ export default class Connection {
             }
         };
 
-        await socket_open_promise;
+        await socketOpenPromise;
 
         connection.sendMessage({
             Initialize: {
