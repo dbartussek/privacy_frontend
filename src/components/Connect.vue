@@ -16,7 +16,7 @@
 
     @Component({})
     export default class Connect extends Vue {
-        @Prop({default: () => "wss://privacyapi.bartussek.myds.me"})
+        @Prop({default: () => "ws://192.168.0.94:8001"})
         address!: string;
 
         name: string = '';

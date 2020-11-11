@@ -29,12 +29,34 @@
                                 :value="it.value"
                         />
                     </v-radio-group>
-                    <v-text-field
+                    <!-- <v-text-field
                             label="Guess"
 
                             v-model="guess"
-                    />
+                    /> -->
+                    <v-slider
+                            label="Guess"
+                            
+                            v-model="guess"
+                            color="green"
+                            track-color="red"
+                            thumb-color="blue"
+                            thumb-label="always"
+                            :thumb-size="26"
+                            :max="gameProp.players.length"
+                            
+                    >
+                        <template v-slot:append>
+                                <v-text-field
+                                v-model="guess"
+                                class="mt-0 pt-0"
+                                type="number"
+                                style="width: 60px"
+                                ></v-text-field>
+                        </template>
+                    </v-slider>
                     <v-btn type="submit">Answer</v-btn>
+
                 </v-form>
 
             </v-card-text>
